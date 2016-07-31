@@ -1,10 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import styles from './styles.module.css';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-injectTapEventPlugin();
-
 
 class Home extends React.Component {
   createGame(e){
@@ -15,14 +11,16 @@ class Home extends React.Component {
   }
   render(){
     return (
-      <div>
-         <div className={styles.title}>
+      <section className={styles.wrapper}>
+         <div className={styles.content}>
+           <p className={styles.title}>
             Avalon 
+           </p>
+         <FlatButton label="创建游戏" onClick={this.createGame} />
+         <FlatButton label="加入游戏" onClick={this.joinGame} />
+         <FlatButton label="游戏说明" href="/about" />
          </div>
-         <RaisedButton label="创建游戏" onClick={this.createGame} />
-         <RaisedButton label="加入游戏" onClick={this.joinGame} />
-         <RaisedButton label="游戏说明" />
-      </div>
+      </section>
     );
   }
 }

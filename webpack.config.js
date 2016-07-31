@@ -12,7 +12,6 @@ const APP_PATH  = resolve(ROOT_PATH,'app');
 const BUILD_PATH= resolve(ROOT_PATH,'build');
 const MODULE_PATH = join(ROOT_PATH,'node_modules');
 
-
 module.exports= {
   entry: {
     app: path.resolve(APP_PATH, 'index.js')
@@ -31,7 +30,12 @@ module.exports= {
     progress: true
   },
   resolve: {
-      extensions: ['', '.js', '.jsx']
+    alias: {
+      'images': join(APP_PATH,'images'),
+      'components': join(APP_PATH,'components'),
+      'views' : join(APP_PATH,'views')
+    },
+    extensions: ['', '.js', '.jsx']
   },
   //babel重要的loader在这里
   module: {
